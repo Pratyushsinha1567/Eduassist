@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"
+  prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+
+<head>
+  <script>
+    function toggleChatBox() {
+        const chatBox = document.getElementById("chat-box");
+        chatBox.classList.toggle("active");
+    }
+
+    async function askQuestion() {
+        const query = document.getElementById("query").value;
+        if (!query.trim()) return;
+
+        const messages = document.getElementById("messages");
+
+        // Add user message
+        const userMessage = document.createElement("div");
+        userMessage.classList.add("message", "user-message");
+        userMessage.textContent = query;
+        messages.appendChild(userMessage);
+
+        document.getElementById("query").value = "";
+
+        
+            // Fetch the answer
+            const response = await fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `query=${encodeURIComponent(query)}`
+            });
+
+            const data = await response.json();
+
+            // Add bot's response to chat
+            const botMessage = document.createElement("div");
+            botMessage.classList.add("message", "bot-message");
+            botMessage.textContent = data.answer;
+            messages.appendChild(botMessage);
+
+            // Scroll to the bottom of the chat
+            messages.scrollTop = messages.scrollHeight;
+    }
+</script>
+  <meta charset="utf-8" />
+  <script>(function (i, s, o, g, r, a, m) { i["GoogleAnalyticsObject"] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga"); ga("create", "UA-117534316-1", { "cookieDomain": "auto" }); ga("set", "anonymizeIp", true); ga("send", "pageview");</script>
+  <link rel="canonical" href="https://iitbhu.ac.in/dept/mat" />
+  <meta name="description" content="" />
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+  <meta name="MobileOptimized" content="width" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <link rel="icon" href="logo_iitbhu.png" type="image/png" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <!-- Add your external stylesheet here if you have one -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <title>MAT - Welcome | Indian Institute of Technology (BHU)</title>
+    <img src="download.jpg" alt="" class="cover-photo">
+    
+
+
+      <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet.css') }}" />
+
+      <script src="https://use.fontawesome.com/releases/v5.13.1/js/all.js" defer crossorigin="anonymous"></script>
+      <script src="https://use.fontawesome.com/releases/v5.13.1/js/v4-shims.js" defer crossorigin="anonymous"></script>
+
+  </head>
+
+<body class="layout-no-sidebars page-node-234 path-node node--type-page">
+  <a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper" style="width:99%">
+      <div id="page">
+        <header id="header" class="header" role="banner" aria-label="Site header" style="width:102%">
+          <nav class="navbar" id="navbar-top">
+            <section class="row region region-secondary-menu">
+              <div id="block-landing-topbar"
+                class="block block-block-content block-block-content98da4256-ec21-45ea-8938-a4f6d0f34a35">
+
+
+                <div class="content">
+
+                  <div
+                    class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                    <style>
+                      /*
+                      -->
+                    <![CDATA[/* ><!--*/
+                      .container-fluid,
+                      .container-lg,
+                      .container-md,
+                      .container-sm,
+                      .container-xl {
+                        margin-right: -100px;
+                        margin-left: 0px;
+                      }
+
+                      .topbar_fontsize {
+                        font-size: 18px;
+                      }
+
+                      @media screen and (max-width: 600px) {
+                        .topbar_fontsize {
+                          font-size: 11px;
+                        }
+
+                        /*--><!]]>*/
+                    </style>
+
+                    <div id="topbar" class="">
+                      <div class="col-md-12">
+                        <div class="social-links d-flex justify-content-start ml-5">
+                          <a href="https://twitter.com/IITBHU_Varanasi" class="text-white mr-3" target="_blank">
+                            <img src="twitter.png" width="18" style="margin-top:-5px; filter: invert(1);">
+                          </a>
+                          <a href="https://www.facebook.com/pr.iitbhu/" class="facebook text-white mr-3"
+                            target="_blank">
+                            <i class="fab fa-facebook topbar_fontsize"></i>
+                          </a>
+                          <a href="https://instagram.com/iitbhu.varanasi?igshid=1vdtjiwcqid9m"
+                            class="instagram text-white mr-3" target="_blank">
+                            <i class="fab fa-instagram topbar_fontsize"></i>
+                          </a>
+                          <a href="https://www.linkedin.com/school/iitbhu-varanasi" class="instagram text-success mr-3"
+                            target="_blank">
+                            <i class="fab fa-linkedin topbar_fontsize"></i>
+                          </a>
+                          <a href="https://www.youtube.com/c/IITBHU" class="instagram text-danger mr-3" target="_blank">
+                            <i class="fab fa-youtube topbar_fontsize"></i>
+                          </a>
+                          <a href="https://www.google.com/maps/place/Indian+Institute+of+Technology+(BHU)+Varanasi/@25.2623295,82.971864,14z/data=!4m5!3m4!1s0x398e33ef9b1f7cdd:0x7555db6d623dc140!8m2!3d25.2623247!4d82.9893735"
+                            class="instagram text-white mr-3" target="_blank">
+                            <i class="fa fa-map-marker" style="font-size:18px;"></i>
+                          </a>
+                          <a href="/search/node" class="text-white mr-3">
+                            <i class="fas fa-search topbar_fontsize"></i> Search
+                          </a>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </section>
+
+            <div class="form-inline navbar-form ml-auto">
+              <section class="row region region-top-header-form">
+                <div id="block-landing-top-header-form"
+                  class="block block-block-content block-block-content2e5af924-5a5c-4790-ad2b-f1d5ce581163">
+
+
+                  <div class="content">
+
+                    <div
+                      class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+
+                      <style>
+                        html,
+                        body {
+                          min-width: 100%;
+                          overflow-x: hidden;
+                          margin: 0px;
+                          padding: 0px;
+                          background-color: #fff;
+                          color: #000;
+                          font-family: sans-serif;
+                        }
+
+                        * {
+                          font-family: sans-serif;
+                        }
+
+                        .gray {
+                          -webkit-filter: grayscale(1);
+                          -webkit-filter: grayscale(100%);
+                          -moz-filter: grayscale(100%);
+                          -ms-filter: grayscale(100%);
+                          -o-filter: grayscale(100%);
+                          filter: grayscale(100%);
+                        }
+
+                        .gray2 {
+                          -webkit-filter: grayscale(.6);
+                          -webkit-filter: grayscale(60%);
+                          -moz-filter: grayscale(60%);
+                          -ms-filter: grayscale(60%);
+                          -o-filter: grayscale(60%);
+                          filter: grayscale(60%);
+                        }
+
+                        .bg-bw {
+                          background: linear-gradient(to right,
+                              #000000 0%,
+                              #000000 50%,
+                              #ffffff 60%,
+                              #ffffff 100%);
+                        }
+
+                        .bg-purpleiit {
+                          /*background:#8C477E;*/
+                          background: #573054;
+                        }
+
+                        .bg_lightpurple1 {
+                          background: #d9c5d5;
+                        }
+
+                        .bg_lightpurple2 {
+                          background: #be9fb8;
+                        }
+
+                        .bg_lightpurple3 {
+                          background: #e6dbe4;
+                        }
+
+
+                        /*--><!]]>*/
+                      </style>
+                      <link rel="stylesheet" type="text/css" href="/contents/iitbhu/css/formater.css" />
+                      <div id="topbar" class="row no-gutters">
+
+
+                        <div class="col-md-12">
+                          <div class="social-links mr-0">
+
+
+                            <a href="/user/password" class="text-white mr-3 mt-2" style="font-size:16px;"><span
+                                style="position:absolute;top:12px;left:-4px;"> Reset</span></a>
+                            <a class="font-button plus btn btn-sm text-white p-0 m-0 topbar_fontsize"
+                              id="_biggify">A<sup>+</sup> | </a> <a
+                              class="font-button actual btn btn-sm text-white p-0 m-0 topbar_fontsize" id="_reset">A
+                              |</a> <a class="font-button minus btn btn-sm text-white p-0 m-0 topbar_fontsize"
+                              id="_smallify"> A<sup>-</sup></a>
+                            <span class="marginTop">
+                              <a id="bg-orange" onclick="myFunction(this)" class="btn pallet bg-bw pb-2  p-0 mt-0"></a>
+                              <a id="bg-60" onclick="changeit(this)" class="btn pallet  bg-pink pb-2  p-0 m-0"
+                                style="filter: grayscale(60%);"></a>
+                              <a id="bg-60" onclick="changeit(this)" class="btn pallet  pb-2  p-0 m-0"
+                                style="filter: grayscale(60%);"></a>
+
+                              <a id="bg-green" onclick="changeit(this)" class=" btn pallet   bg-green pb-2  p-0 m-0">
+                              </a>
+                              <a id="bg-purple" onclick="changeit(this)" class="btn pallet bg-purple pb-2  p-0 m-0"></a>
+                              <a id="bg-grey" onclick="changeit(this)" class="btn pallet  bg-grey pb-2  p-0 m-0"> </a>
+
+                            </span>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+
+                      <script>
+
+
+                        function showAlert() {
+                          var confirmation = confirm("This link shall take you to a page outside the IIT(BHU) - Varanasi domain(https://iitbhu.ac.in/). For any query regarding the contents of the linked page, please contact the webmaster of the concerned website");
+                          if (!confirmation) return false;
+                        } 
+                      </script>
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                      <script>
+
+                        $('#_biggify').on('click', function () {
+                          var fontSize = $('html').css('font-size'); var
+                            newFontSize = parseInt(fontSize) + 1; if (newFontSize >= 22) {
+                              newFontSize = 22;
+                            }
+                          $('html').css('font-size', newFontSize + 'px')
+                        })
+
+                        $('#_smallify').on('click', function () {
+                          var fontSize = $('html').css('font-size');
+                          var newFontSize = parseInt(fontSize) - 1;
+                          if (newFontSize <= 12) { newFontSize = 12; } $('html').css('font-size', newFontSize + 'px');
+                        })
+                        $('#_reset').on('click', function () { $('html').css('font-size', '16px') }) 
+                      </script>
+                      <script>
+                        $(document).ready(function () {
+                          // jQuery methods go here... 
+                          $("#bg-orange").click(function () { //$('body').css("filter", greyscale(100%));
+                            document.querySelector('html').classList.add('gray');
+                            document.querySelector('html').classList.remove('gray2');
+                          }); $("#bg-60").click(function () {
+                            //$('body').css("filter", greyscale(60%));
+                            document.querySelector('html').classList.add('gray2');
+                            document.querySelector('html').classList.remove('gray');
+                          });
+                        });
+                      </script>
+                    </div>
+
+                  </div>
+                </div>
+
+              </section>
+
+            </div>
+          </nav>
+
+          <div id="block-menu-mat" class="block block-block-content block-block-content551a2817-996a-4359-bb8b-7c6ba6a0b9bb">
+            <div class="content">
+              <div
+                class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                <style type="text/css" />
+                <style>
+                  #spin {
+                    width: 200px;
+                  }
+
+                  #spin:after {
+                    content: "";
+                    animation: spin 3s linear infinite alternate;
+                  }
+
+                  @keyframes spin {
+                    0% {
+                      content: "Projects";
+                    }
+
+
+
+                    100% {
+                      content: "Patents\00a0";
+                    }
+                  }
+                </style>
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-purpleiit sticky-top  pl-5">
+                  <a class="navbar-brand " href="/"><img src="/sites/default/files/iitbhu/img/other/logotrans.png"
+                      width="60" /></a>
+                  <div style="width:480px;" class="n">
+                    <span class="border-bottom border-info" style="color:white;font-size: 18px;font-weight: bold; ">
+                      <a href="/dept/mat" style="text-decoration:none;color:inherit">Department of Mathematical
+                        Sciences</a>
+                    </span><br />
+                    <span style="font-size: 16px;color:yellow;text-shadow: 1px -1px 2px #1E0D08;"> <a href="/"
+                        style="text-decoration:none;color:inherit">Indian Institute of Technology (BHU) Varanasi
+                      </a>
+                    </span>
+                  </div>
+                  <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-target="#navbarText" data-toggle="collapse" type="button"><span
+                      class=" " style="color:white;">☰✥</span></button>
+                  <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      <li class="nav-item"><a class="nav-link text-white" href="/dept/mat">Home</a></li>
+                      <li class="nav-item"><a class="nav-link text-white" href="/dept/mat/courses">Courses</a></li>
+                      <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true"
+                          class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#"
+                          id="navbarDropdownMenuLink">Research </a>
+                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu"><a class="dropdown-item"
+                            href="/dept/mat/research/specialization-1">Image processing</a> <a class="dropdown-item"
+                            href="/dept/mat/research/specialization-2">Mathematical Modelling</a> <a
+                            class="dropdown-item" href="/dept/mat/research/specialization-3">Wavelet Analysis and
+                            Distributions</a> <a class="dropdown-item"
+                            href="/dept/mat/research/specialization-4">Nonlinear Waves</a> </div>
+                      </li>
+                      <li class="nav-item"><a class="nav-link text-white" href="/dept/mat/project"><span id="spin"
+                            style="width:200px;"> </span></a></li>
+                      <li class="nav-item"><a class="nav-link text-white" href="/dept/mat/labs">Laboratory</a></li>
+                      <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true"
+                          class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#"
+                          id="navbarDropdownMenuLink">Activities</a>
+                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu"><a class="dropdown-item"
+                            href="/dept/mat/activities/technical_talk">Technical Talk</a> <a class="dropdown-item"
+                            href="/dept/mat/activities/workshops">Workshop</a> <a class="dropdown-item"
+                            href="#">Conference</a></div>
+                      </li>
+                      <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true"
+                          class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#"
+                          id="navbarDropdownMenuLink">People </a>
+                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu"><a class="dropdown-item"
+                            href="/dept/mat/faculty">Faculty</a> <a class="dropdown-item"
+                            href="/dept/mat/staff">Staff</a> </div>
+                      </li>
+                      <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true"
+                          class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#"
+                          id="navbarDropdownMenuLink">Students </a>
+                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu"><a class="dropdown-item"
+                            href="/dept/mat/student/current">Current</a> <a class="dropdown-item"
+                            href="/dept/mat/alumni">Alumni</a></div>
+                      </li>
+                      <li class="nav-item"><a class="nav-link text-white" href="/dept/mat/gallery">Gallery</a></li>
+                      <li class="nav-item"><a class="nav-link text-white" href="/">IIT(BHU)</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+        </header>
+
+        <div id="main-wrapper" class="layout-main-wrapper clearfix">
+          <div id="main" class="">
+
+            <div class="row row-offcanvas row-offcanvas-left clearfix">
+              <main class="main-content col" id="content" role="main">
+                <section class="section">
+                  <a id="main-content" tabindex="-1"></a>
+                  <div class="mr-0 ">
+                    <div data-drupal-messages-fallback class="hidden"></div>
+
+                    <article data-history-node-id="234" role="article" about="/dept/mat" typeof="schema:WebPage"
+                      class="node node--type-page node--view-mode-full clearfix">
+                      <header>
+
+                        <span property="schema:name" content="MAT - Welcome" class="rdf-meta hidden"></span>
+
+                      </header>
+                      <div class="node__content clearfix">
+
+                        <div property="schema:text"
+                          class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                          <link href="/libraries/custom/css/slider_all.css" rel="stylesheet" />
+                          <link href="/contents/mat/css/splz.css" rel="stylesheet" /><!-- Ends Slider -->
+                          <div class="row justify-content-end">
+                            <div class="col-md-12">
+                              <div id="carouselExampleIndicators" class="carousel slide  " data-ride="carousel"
+                                style="width:102%;margin-top:-10px">
+                                <ol class="carousel-indicators">
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src="/contents/mat/img/slider/slider_01.jpg"
+                                      alt="Second slide" />
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="/contents/mat/img/slider/slider_02.jpg"
+                                      alt="First slide" />
+                                  </div>
+                                </div>
+                                <p> <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                    data-slide="prev"><br /><span class="carousel-control-prev-icon"
+                                      aria-hidden="true"></span><br /><span
+                                      class="sr-only">Previous</span><br /></a><br /><a class="carousel-control-next"
+                                    href="#carouselExampleIndicators" role="button" data-slide="next"><br /><span
+                                      class="carousel-control-next-icon" aria-hidden="true"></span><br /><span
+                                      class="sr-only">Next</span><br /></a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <p> </p>
+                          <!-- test Tabs -->
+                          <style type="text/css">
+                            .nav-link {
+                              color: white;
+                            }
+
+                            .nav-link:hover {
+                              color: cyan;
+                            }
+                          </style>
+                          <link href="/libraries/custom/css/info_tabs.css" rel="stylesheet" />
+                          <div class="row justify-content-center ml-2">
+                            <div class="col-md-12">
+                              <div class="nav page_tabs nav-tabs nav-fill " id="nav-tab" role="tablist"><a
+                                  aria-controls="nav-programme" aria-selected="true"
+                                  class="li nav-item nav-link  active focus" data-toggle="tab" href="#nav-programme"
+                                  id="nav-programme-tab" role="tab">Programmes</a> <a aria-controls="nav-achivement"
+                                  aria-selected="false" class="li nav-item nav-link" data-toggle="tab"
+                                  href="#nav-achivement" id="nav-achivement-tab" role="tab">Achievements</a> <a
+                                  aria-controls="nav-recruitment" aria-selected="false" class="li nav-item nav-link"
+                                  data-toggle="tab" href="#nav-recruitment" id="nav-recruitment-tab"
+                                  role="tab">Recruitment </a> <a aria-controls="nav-news" aria-selected="false"
+                                  class="li nav-item nav-link" data-toggle="tab" href="#nav-news" id="nav-news-tab"
+                                  role="tab">News</a> <a aria-controls="nav-announcement" aria-selected="false"
+                                  class="li nav-item nav-link" data-toggle="tab" href="#nav-announcement"
+                                  id="nav-announcement-tab" role="tab">Announcement</a> <a aria-controls="nav-visitors"
+                                  aria-selected="false" class="li nav-item nav-link" data-toggle="tab"
+                                  href="#nav-visitors" id="nav-visitors-tab" role="tab">Visitors</a> <a
+                                  aria-controls="nav-events" aria-selected="false" class="li nav-item nav-link"
+                                  data-toggle="tab" href="#nav-events" id="nav-events-tab" role="tab"> Events</a></div>
+                              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent"
+                                style=" height: 300px; overflow-y: scroll;">
+                                <div aria-labelledby="nav-programme-tab" class="tab-pane focus fade show active pl-3"
+                                  id="nav-programme" role="tabpanel"><b>Dual Degree (IDD)</b><br />
+                                  This is a new programme started in the year 2005.The programme imparts the necessary
+                                  knowledge of numerical and computational techniques, various topics in computer
+                                  science, mathematical modelling, simulation, probabilistic and statistical tools and
+                                  trains students to develop their own computer software for several applications which
+                                  they may come across in their professional career. Some of the typical courses in the
+                                  programme are computer architecture, computer graphics, image processing, DBMS,
+                                  programming languages, compiler design, theory of automata, parallel
+                                  algorithms,optimization methods and applications, statistical methods and algorithms,
+                                  neural computing, computer graphics and visualization,cryptography etc.<br />
+                                  The objectives of the programme are to train students to handle problems in industries
+                                  and government organizations through the combined use of mathematical and computer
+                                  techniques. The department runs a 5 Year Integrated Dual Degree programme which is one
+                                  of the most sought after programmes offered by the institute. The top jobs in terms of
+                                  annual package are offered for this programme, which is a strong indication how
+                                  popular and useful the programme is for the industrial growth in general and software
+                                  industry in particular under present circumstances.<br /><b>Ph.D.</b><br />
+                                  Ph.D. Program offers an exciting and unique opportunity to students for pursuing
+                                  research in several areas of Mathematical Sciences. Check out the faculty research
+                                  page for details of research areas and faculty involved.. Admission is made twice a
+                                  year in January and July. Only NET and GATE qualified individuals are eligible for the
+                                  admission. The admission in Ph.D Programme also takes place under QIP. I Please visit
+                                  http://www.iitbhu.ac.in for notification and details.</div>
+                                <div aria-labelledby="nav-achivement-tab" class="tab-pane fade pl-3" id="nav-achivement"
+                                  role="tabpanel">............</div>
+                                <div aria-labelledby="nav-recruitment-tab" class="tab-pane fade pl-3"
+                                  id="nav-recruitment" role="tabpanel">With reference to the Rolling Advertisement for
+                                  Assistant Professor - Advertisement No.: IIT(BHU)/FA/Rolling Advt/08/2019 for faculty
+                                  recruitment at IIT(BHU) available at home page of IIT(BHU) website, the desired
+                                  Specializations for Faculty Recruitment in the Department of Mathematical Sciences are
+                                  as follows -<br />
+                                  OPEN<br />
+                                  with preference to<br />
+                                  Algebra, Number Theory, Topology and Geometry
+                                  <ul>
+                                    <li><b>For further details and application form</b> <strong><a
+                                          href="/dean/dofa/recruitment"><span style="color:#c0392b;">Click
+                                            Here</span></a></strong></li>
+                                  </ul>
+                                </div>
+                                <div aria-labelledby="nav-news-tab" class="tab-pane fade pl-3" id="nav-news"
+                                  role="tabpanel">QIP Short term Course &amp;CEP Workshop on "Advances in Graph Theory
+                                  With Applications to Network Sciences".<br />
+                                  6th INDIA- TAIWAN CONFERENCE ON DISCRETE MATHEMATICS</div>
+                                <div aria-labelledby="nav-visitors-tab" class="tab-pane fade" id="nav-visitors"
+                                  role="tabpanel">... Data Awaited</div>
+                                <div aria-labelledby="nav-announcement-tab" class="tab-pane fade pl-3"
+                                  id="nav-announcement" role="tabpanel">Announcement .....</div>
+                                <div aria-labelledby="nav-events-tab" class="tab-pane fade" id="nav-events"
+                                  role="tabpanel">......</div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Tabs --><!-- Html Code Ends Here -->
+                          <section class="bg-silver-deep py-5">
+                            <div class="container pb-70">
+                              <div class="section-content">
+                                <div class="row">
+                                  <div class="col-md-5"><img alt="" class="img-fullwidth "
+                                      src="/contents/mat/img/other/history.jpg" width="460" /></div>
+                                  <div class="col-md-7 text-justify"><u class="subheading text-red">Mathematical
+                                      Sciences</u>
+                                    <p class="hidden-md">Department of Mathematical Sciences began its journey as a
+                                      section to assist engineering departments of the institute which, in the true
+                                      sense, pioneered engineering education in the Indian Nation. It soon acquired the
+                                      status of a full-fledged department in 1985.Its importance lies in the fact that
+                                      it caters to the needs of the undergraduate as well as post-graduate students of
+                                      the Institute. In addition, the department runs its own 5 year Integrated Dual
+                                      Degree course in Mathematics &amp; Computing.<button
+                                        class="btn btn-outline-danger btn-sm" data-target="#readmore"
+                                        data-toggle="modal" type="button">Read More</button> </p>
+                                    <!-- Modal -->
+                                    <div aria-hidden="true" aria-labelledby="exampleModalCenterTitle" class="modal fade"
+                                      id="readmore" role="dialog" tabindex="-1">
+                                      <div class="modal-dialog  modal-xl modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Department of
+                                              Mathematical Sciences</h5>
+                                            <p><button aria-label="Close" class="close" data-dismiss="modal"
+                                                type="button"><span aria-hidden="true">×</span></button></p>
+                                          </div>
+                                          <div class="modal-body" style="text-align:justify">Department of Mathematical
+                                            Sciences began its journey as a section to assist engineering departments of
+                                            the institute which, in the true sense, pioneered engineering education in
+                                            the Indian Nation.It soon acquired the status of a full-fledged department
+                                            in 1985.Its importance lies in the fact that it caters to the needs of the
+                                            undergraduate as well as post-graduate students of the Institute.In
+                                            addition, the department runs its own 5 year Integrated Dual Degree course
+                                            in Mathematics &amp; Computing. The department aims to give emphasis to
+                                            research in analysis, algebra, topology, mathematical transforms etc. Be it
+                                            fluid dynamics, gas dynamics, biomechanics, fracture mechanics, digital
+                                            image processing, generalised thermo-elasticity, heat and mass transfer,
+                                            cryptology and many more fields of applied nature, department’s contribution
+                                            is enormous in terms of numerous research papers published in reputed
+                                            international journals over the past few decades. Computing is the glamour
+                                            of the department. It annexes several dimensions in terms of new and growing
+                                            areas of research and further facilitates simulation of mathematical models
+                                            constructed for interdisciplinary areas</div>
+                                          <div class="modal-footer"><button class="btn btn-secondary"
+                                              data-dismiss="modal" type="button">Close</button></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!--modal Ends -->
+                                    <p> </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <div class="pl-5 subheading">Specializations</div>
+                          <div class="cta-100 ">
+                            <div class="f">
+                              <div class="row blog">
+                                <div class="col-md-12">
+                                  <div class="carousel carouseld slide container-blog" data-ride="carousel"
+                                    id="blogCarousel">
+                                    <ol class="carousel-indicators">
+                                      <li class="active" data-slide-to="0" data-target="#blogCarousel"
+                                        style="height:4px;max-height:4px;">_</li>
+                                      <li data-slide-to="1" data-target="#blogCarousel"
+                                        style="height:4px;max-height:4px;">_</li>
+                                      <!--<li data-slide-to="2" data-target="#blogCarousel" style="height:4px;max-height:4px;">_</li>-->
+                                    </ol><!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <div class="item-box-blog">
+                                              <div class="item-box-blog-image">
+                                                <!--Date-->
+                                                <div class="item-box-blog-date  bg-secondary text-white">IP</div>
+                                                <!--Image-->
+                                                <figure>
+                                                  <div class="square_abstract">
+                                                    <div class="squares">
+                                                      <p>Image processing</p>
+                                                    </div>
+                                                  </div>
+                                                </figure>
+                                              </div>
+                                              <div class="item-box-blog-body">
+                                                <!--Heading-->
+                                                <div class="item-box-blog-heading">
+                                                  <h5 class="sub_subheading_nl">Image processing</h5>
+                                                </div>
+                                                <!--Data-->
+                                                <div class="item-box-blog-data text-justify">Digital image processing is
+                                                  the use of computer algorithms to perform image processing on digital
+                                                  images.</div>
+                                                <div class="mt"><a class="btn btn-outline-danger  btn-sm mt-2"
+                                                    href="/dept/mat/research/specialization-1" tabindex="0">read
+                                                    more</a></div>
+                                                <!--Read More Button-->
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <div class="item-box-blog">
+                                              <div class="item-box-blog-image">
+                                                <!--Date-->
+                                                <div class="item-box-blog-date  bg-secondary text-white">MM</div>
+                                                <!--Image-->
+                                                <figure>
+                                                  <div class="square_abstract">
+                                                    <div class="squares">
+                                                      <p>Mathematical Modelling</p>
+                                                    </div>
+                                                  </div>
+                                                </figure>
+                                              </div>
+                                              <div class="item-box-blog-body">
+                                                <!--Heading-->
+                                                <div class="item-box-blog-heading">
+                                                  <h5 class="sub_subheading_nl">Mathematical Modelling</h5>
+                                                </div>
+                                                <!--Data-->
+                                                <div class="item-box-blog-data text-justify">A mathematical model is a
+                                                  description of a system using mathematical concepts and language.
+                                                </div>
+                                                <div class="mt"><a class="btn btn-outline-danger  btn-sm mt-2"
+                                                    href="/dept/mat/research/specialization-2" tabindex="0">read
+                                                    more</a></div>
+                                                <!--Read More Button-->
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4">
+                                            <div class="item-box-blog">
+                                              <div class="item-box-blog-image">
+                                                <!--Date-->
+                                                <div class="item-box-blog-date  bg-secondary text-white">WAD</div>
+                                                <!--Image-->
+                                                <figure>
+                                                  <div class="square_abstract">
+                                                    <div class="squares">
+                                                      <p>Wavelet Analysis &amp; Distributions</p>
+                                                    </div>
+                                                  </div>
+                                                </figure>
+                                              </div>
+                                              <div class="item-box-blog-body">
+                                                <!--Heading-->
+                                                <div class="item-box-blog-heading">
+                                                  <h5 class="sub_subheading_nl">Wavelet Analysis and Distributions</h5>
+                                                </div>
+                                                <!--Data-->
+                                                <div class="item-box-blog-data text-justify">A wavelet series is a
+                                                  representation of a square-integrable (real- or complex-valued)
+                                                  function by a certain orthonormal series generated by a wavelet.</div>
+                                                <div class="mt"><a class="btn btn-outline-danger  btn-sm mt-2"
+                                                    href="/dept/mat/research/specialization-3" tabindex="0">read
+                                                    more</a></div>
+                                                <!--Read More Button-->
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!--.row-->
+                                      </div>
+                                      <!--.item-->
+                                      <div class="carousel-item ">
+                                        <div class="row">
+                                          <div class="col-md-4">
+                                            <div class="item-box-blog">
+                                              <div class="item-box-blog-image">
+                                                <!--Date-->
+                                                <div class="item-box-blog-date  bg-secondary text-white">NW</div>
+                                                <!--Image-->
+                                                <figure>
+                                                  <div class="square_abstract">
+                                                    <div class="squares">
+                                                      <p>Nonlinear Waves</p>
+                                                    </div>
+                                                  </div>
+                                                </figure>
+                                              </div>
+                                              <div class="item-box-blog-body">
+                                                <!--Heading-->
+                                                <div class="item-box-blog-heading">
+                                                  <h5 class="sub_subheading_nl">Nonlinear Waves</h5>
+                                                </div>
+                                                <!--Data-->
+                                                <div class="item-box-blog-data">
+                                                  <p>Actively working on ground based bistatic scatterometer system and
+                                                    satellite-based measurements for the prediction of the sensors...
+                                                  </p>
+                                                </div>
+                                                <div class="mt"><a class="btn btn-outline-danger  btn-sm mt-2"
+                                                    href="/dept/mat/research/specialization-4" tabindex="0">read
+                                                    more</a></div>
+                                                <!--Read More Button-->
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-4"> </div>
+                                          <div class="col-md-4"> </div>
+                                        </div>
+                                        <!--.row-->
+                                      </div>
+                                      <!--.item-->
+                                    </div>
+                                    <!--.carousel-inner-->
+                                  </div>
+                                  <!--.Carousel-->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <script>
+
+                            $('.carouseld').carousel({ interval: 500 })
+
+                          </script>
+                          <p> </p>
+                          <!--
+<style type="text/css"><p>.hero { </p>
+<p>    background-image: url('/contents/mat/img/other/counter_bg.jpg');</p>
+<p>}</p>
+</style><div class="ml-3 bg-green hero" style="background-color: rgba(0,0,0,0.25);">
+<div class="love_counter row" id="counter">
+<div class="col-sm-3 counter-Txt rounded"><img  data-cke-saved-src="/contents/iitbhu/img/icon/employee.png" src="/contents/iitbhu/img/icon/employee.png" /><strong><span class="counter-value" data-count="10"><span style="font-size:16px; color:yellow">Employee</span> </span></strong></p>
+<div class="love_count bg-primary"><span class="counter-value" data-count="10">17</span></div>
+<div class="bg-light">
+<div style="font-size:14px;">&nbsp; &nbsp; Faculty :17 &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Staff : 03&nbsp; &nbsp;<br />
+&nbsp;</div>
+</div>
+</div>
+<div class="col-sm-3 counter-Txt rounded"><img  data-cke-saved-src="/contents/iitbhu/img/icon/reading-book.png" src="/contents/iitbhu/img/icon/reading-book.png" /><strong><span class="counter-value" data-count="10"><span style="font-size:16px; color:yellow">Student</span> </span></strong></p>
+<div class="love_count bg-success"><span class="counter-value" data-count="10"></span></div>
+<div class="bg-light">
+<div style="font-size:14px;">&nbsp; &nbsp; Female : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; BTech : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; IDD : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Research : &nbsp; &nbsp;</div>
+</div>
+</div>
+<div class="col-sm-3 counter-Txt"><img  data-cke-saved-src="/contents/iitbhu/img/icon/research.png" src="/contents/iitbhu/img/icon/research.png" /><span class="counter-value" data-count="25"> <strong><span class="text-white" style="font-size:16px;">Publications</span></strong></span></p>
+<div class="love_count bg-warning"><span class="counter-value" data-count="25"></span></div>
+<div class="bg-light">
+<div style="font-size:14px;">&nbsp; &nbsp; Total till date : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Ongoing : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; QIP : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Funded : &nbsp; &nbsp;<br />
+&nbsp;</div>
+</div>
+</div>
+<div class="col-sm-3 counter-Txt margin-bot-35"><img  data-cke-saved-src="/contents/iitbhu/img/icon/consultancy.png" src="/contents/iitbhu/img/icon/consultancy.png" /><strong><span class="counter-value" data-count="235"><span class="text-white" style="font-size:16px;">Projects &amp; Consultancy</span></span></strong></p>
+<div class="love_count bg-info"><span class="counter-value" data-count="150"></span></div>
+<div class="bg-light">
+<div style="font-size:14px;">&nbsp; &nbsp; Total till date : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Patents : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Projects : &nbsp; &nbsp;<br />
+&nbsp; &nbsp; Internal : &nbsp; &nbsp;<br />
+&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><-->
+                        </div>
+
+
+
+                      </div>
+                    </article>
+
+                  </div>
+                </section>
+              </main>
+
+            </div>
+          </div>
+        </div>
+        <footer class="site-footer">
+          <div class="">
+            <div class="site-footer__top clearfix">
+              <section class="row region region-footer-top">
+                <div id="block-landing-footer-top-4"
+                  class="block block-block-content block-block-content6a889541-d9ab-4985-94e5-52a603573071">
+
+
+                  <div class="content">
+
+                    <div
+                      class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                      <style type="text/css">
+                        <!--/*
+                        -->
+                      <![CDATA[/* ><!--*/
+#block-landing-footer-top-4{
+width: 100%;
+}
+.site-footer .block {
+     margin: 0px 0; 
+     border: 1px solid #444; 
+     border-color: rgba(255, 255, 255, 0.1); 
+     padding: 0px; */
+}
+.site-footer__top {
+    letter-spacing: 0.2px;
+     margin-top: 0px; 
+     border-top: 1px solid #555; 
+     border-color: rgba(255, 255, 255, 0.15); 
+}
+.site-footer__top .region {
+  
+    float: none;
+     padding: 0px; 
+}
+.row .region .region-footer-top{
+padding: 0px 0 0px;
+margin: 0px 0 0px;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: block;
+color:red;
+}
+
+/*--><!]]>*/
+                      </style>
+                      <center class="pt-1 pb-1" style="background:#055a8e;color:#f9cea4; width:102%">
+                        <a href="/user/login"> Employee Login </a> |
+                        <a href="https://services.iitbhu.ac.in/" target="_blank"> Services (intranet) </a> |
+                        <a href="/contents/institute/2024/notification/noti_mrc_7339.pdf" target="_blank"> Hospitals
+                        </a> <a href="/contents/institute/admin/doc/admin_claim_form.pdf"> (Claim Form) </a> |
+                        <a href="http://mail.itbhu.ac.in/" target="_blank">Check Mail </a> |
+                        <a href="/cf/cis/website/portals" target="_blank"> Portals </a> |
+                        <a href="/cf/cis"> CCIS </a> |
+                        <a href="/cf/lib"> Library </a> |
+                        <a href="/dept"> Departments</a> |
+                        <a href="https://prev.iitbhu.ac.in/" target="_blank"> Previous Website </a> |
+                        <a href="/"> IIT(BHU) </a> |
+                        <a href="https://bhu.ac.in/" target="_blank"> BHU</a>
+                      </center>
+                      <a id="back-to-top" href="#" class="back-to-top"><img
+                          src="/contents/iitbhu/img/scroll_top.png" /></a>
+                    </div>
+
+                  </div>
+                </div>
+
+              </section>
+
+            </div>
+            <div class="site-footer__bottom block">
+              <section class="row region region-footer-bottom">
+                <div id="block-landing-footer-bottom-2"
+                  class="block block-block-content block-block-contentf1ff0179-6f15-48fa-9b90-d904691b0fe1">
+
+
+                  <div class="content">
+
+                    <div
+                      class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                      <style type="text/css">
+                        <!--/*
+                        -->
+                      <![CDATA[/* ><!--*/
+#block-landing-footer-bottom-2{
+min-width:100%;
+}
+.site-footer {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     padding: 0px 0 0px;
+}
+
+/* Footer Bottom Styling. */
+.site-footer__bottom .block {
+   margin: 0;
+  padding: 0;
+}
+.site-footer__bottom .content {
+   margin: 0;
+  padding: 0;
+}
+
+.site-footer__bottom {
+  letter-spacing: 0.2px;
+  margin-top: 0px;
+  border-top: 1px solid #555;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.site-footer__bottom .region {
+  margin-top: 0px;
+}
+.site-footer__bottom .block {
+  clear: both;
+}
+.region{
+ margin: 0px 0;
+ padding: 0px 0 0px;
+}
+
+.copyright_height{
+height:40px;
+}
+
+
+.paddingleft{
+  margin-left: 100px;
+}
+.align-footer{
+  padding-left: 0px;
+}
+
+.line-height > div{
+  line-height: 28px;
+}
+.borderdotted{
+  border-right: 1px dotted white;
+}
+@media only screen and (max-width: 770px) {
+
+.copyright_height{
+height:'';
+}
+
+.align-footer{
+  padding-left: 30%;
+
+}
+
+.borderdotted{
+  
+  border-right: none;
+}
+.line-height > div{
+  line-height: 28px;
+}
+}
+
+
+/* Header Color */
+    .bgFooterColor {
+      animation: colorchange 20s linear 1s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 30s linear 0s infinite alternate; /* Chrome and Safari */
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background-color:rgba(255,165,0,0.9); color: white;}
+      20%  {background-color:rgba(71,71,107,0.9); color:red;}
+      40%  {background-color:rgba(255,255,0,0.9); color: black;}
+      60%  {background-color:rgba(255, 71, 99, 9); color: ivory;}
+      80% {background: green; color: white;opacity:0.9;}
+      100% {background: cyan; color: taupe;opacity:0.9;}
+   }
+
+    @-webkit-keyframes colorchange {
+      0%   {background-color:rgba(255,165,0,0.9); color: white;}
+      20%  {background-color:rgba(71,71,107,0.9); color:red;}
+      40%  {background-color:rgba(255,255,0,0.9); color: black;}
+      60%  {background-color:rgba(255, 71, 99, 9); color: ivory;}
+      80% {background: green; color: white;opacity:0.9;}
+      100% {background: cyan; color: taupe;opacity:0.9;}   }
+
+/*--><!]]>*/
+                      </style>
+                      <div class="pb-4" style="background:#1f567c; min-width:101%;">
+                        <div class="row w-100">
+                          <div class="col-md-8 borderdotted text-center">
+                            <div class="my-2"><img src="/contents/iitbhu/img/quick_links.png" width="110px;" /></div>
+
+                            <div class="row  display-footer-menu pl-4 ">
+                              <div class="col-md-3  text-left align-footer line-height ">
+                                <div><a href="https://iitbhu.ac.in/rajbhasha" target="_blank">राजभाषा</a></div>
+
+                                <div><a href="/administration/rti">RTI</a></div>
+
+                                <div><a href="/administration/icc">Internal Complaints Committee</a></div>
+
+                                <div><span class="text-warning">Citizen's Charter</span> <a
+                                    href="/contents/institute/admin/doc/citizens_charter_hindi.pdf"> हिं</a> <a
+                                    href="/contents/institute/admin/doc/citizens_charter_english.pdf">En</a></div>
+
+
+
+                                <div><a href="/dean/dosa/antiragging">Anti-Ragging</a></div>
+
+                                <div><a href="/administration/finance_certificates">Certificates (Finance/Tax)</a></div>
+
+                                <div><a href="/dean/dofa/recruitment">Faculty Recruitment</a> <a
+                                    href="https://facultyrecruitment.iitbhu.ac.in/" target="_blank">(Apply)</a></div>
+
+                                <div><a href="/recruitment_nf">Non-faculty Recruitment</a></div>
+
+                                <div><a href="/contents/institute/admin/doc/RPN-2019.pdf">Recruitment &amp; Promotion
+                                    Norms</a> <a href="/contents/institute/admin/doc/noti_admin_amendment_7457.pdf"
+                                    target="_new">(Amendment) </a></div>
+                              </div>
+
+                              <div class="col-md-3   text-left  align-footer line-height ">
+                                <div><a href="/administration">Administration</a></div>
+
+                                <div><a href="/administration/people">Board of Governors</a></div>
+
+                                <div><a href="/dean/doaa/">Dean (Academic Affairs)</a></div>
+
+                                <div><a href="/dean/dofa">Dean (Faculty Affairs)</a></div>
+
+                                <div><a href="/dean/dora">Dean (Resource &amp; Alumni)</a></div>
+
+                                <div><a href="/dean/dord">Dean (Research &amp; Development)</a></div>
+
+                                <div><a href="/dean/dosa">Dean (Students' Affairs)</a></div>
+
+                                <div><a href="/hostels/people" target="_blank">Council of Wardens</a></div>
+
+                                <div><a href="/administration/proctorial_board">Proctorial Board</a></div>
+
+
+                                <div><span class="text-warning">Annual Report 22-23</span> <a
+                                    href="/contents/institute/dean/doaa/doc/annual_report_hindi_2022-23.pdf"> हिं</a> <a
+                                    href="/contents/institute/dean/doaa/doc/annual_report_english_2022-23.pdf">En</a>
+                                </div>
+                                <div><a href="/administration/balance_sheet">Accounts &amp; Balance Sheet</a></div>
+                              </div>
+
+                              <div class="col-md-3   text-left align-footer  line-height ">
+                                <div><a href="/dean/doaa">Academic Links</a></div>
+                                <div><a href="/cf/cis/website/portals">Portals</a> <a href="/cf/cis/quick_links">CCIS
+                                    Links</a></div>
+
+
+                                <div><a href="/dean/doaa/admission/pg">PG Admissions</a></div>
+
+                                <div><a href="https://www.jeeadv.ac.in/" onclick="return showAlert(this)"
+                                    target="_blank">JEE(Advanced) </a></div>
+
+                                <div><a href="https://octopod.co.in/iitbhu/semester-fees" target="_blank">Fee Deposition
+                                  </a></div>
+
+                                <div><a href="/hostels" target="_blank">Hostels</a></div>
+
+                                <div><a href="/webcast/convocation">Convocations</a></div>
+
+                                <div><a href="/webcast/induction">Orientation &amp; Induction</a></div>
+
+                                <div><span class="text-warning">Holidays:</span> <a
+                                    href="/contents/institute/dean/doaa/doc/holidays_2024.pdf">2024</a> </div>
+
+                                <div><a href="https://intranet.iitbhu.ac.in/ccis/doc/telephone_directory.pdf">Telephone
+                                    Directory (Intranet)</a></div>
+                                <div><a href="/contents/institute/dean/dosa/doc/noti_gad_5159.pdf">Security Advisory for
+                                    Students</a></div>
+                              </div>
+
+
+                              <div class="col-md-3 text-left align-footer line-height ">
+                                <div><a href="/cf/scc">Supercomputing Center</a></div>
+
+                                <div><a href="/rnd/cif">Central Instrument Facility</a></div>
+
+                                <div><a href="/cf/peh">Precision Engineering Hub</a></div>
+
+                                <div><a href="/cf/tlc">Teaching Learning Centre</a></div>
+
+                                <div><a href="/qip">QIP Center</a></div>
+
+                                <div><a href="/cf/gtac">Guest House (GTAC)</a></div>
+
+                                <div><a href="https://www.idapthub.org/" onclick="return showAlert(this)"
+                                    target="_blank">I-DAPT Hub</a></div>
+
+                                <div><a href="https://i3f-iitbhu.org/" onclick="return showAlert(this)"
+                                    target="_blank">I3F (Sec. 8 Company)</a></div>
+
+                                <div><a href="https://www.placement.iitbhu.ac.in/" target="_blank">Training and
+                                    Placement</a></div>
+
+                                <div><a href="/news">News</a> <a href="/events">Events</a> <a href="/alerts">Alerts</a>
+                                </div>
+
+                                <div><a href="/pnm/coverage">Media Coverage</a> <a href="/notifications">Notifications
+                                    (e-Broadcasts)</a></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <div class="row my-2 pl-4">
+                              <div class="col-md-6 align-footer"><img src="/contents/iitbhu/img/footer_transparent.png"
+                                  width="130px;" /></div>
+
+
+
+
+                              <div class="col-md-6 mt-2 align-footer text-right"></div>
+
+                              <div class="w-100"
+                                style="max-height:220px; overflow:hidden;margin-top: 0px;min-width:105%"><a
+                                  class="weatherwidget-io" data-label_1="VARANASI" data-label_2="WEATHER"
+                                  data-theme="original" href="https://forecast7.com/en/25d3282d97/varanasi/">VARANASI
+                                  WEATHER</a>
+                                <script>
+                                  function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0]; if
+                                      (!d.getElementById(id)) {
+                                      js = d.createElement(s); js.id = id;
+                                      js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js,
+                                        fjs);
+                                    }
+                                  } (document, 'script', 'weatherwidget-io-js'); 
+                                </script>
+                              </div>
+
+                              <div class="text-center mt-5"><a class="twittser text-white"
+                                  href="https://twitter.com/IITBHU_Varanasi" target="_blank"><img
+                                    src="/sites/default/files/iitbhu/img/twitter.png" width="24px"
+                                    style="margin-top:-10px;filter: invert(1); " /></a><a
+                                  href="https://www.facebook.com/pr.iitbhu/" class="facebook text-white ml-4"
+                                  target="_blank"><i class="fab   fa-facebook  topbar_fontsize"
+                                    style="font-size:24px"></i></a>
+                                <a href="https://instagram.com/iitbhu.varanasi?igshid=1vdtjiwcqid9m"
+                                  class="instagram text-white  ml-4" target="_blank"><i
+                                    class="fab fa-instagram fa-2x topbar_fontsize" style="font-size:24px"></i></a>
+                                <a href="https://www.linkedin.com/school/iitbhu-varanasi"
+                                  class="instagram text-success  ml-4" target="_blank"><i
+                                    class="fab  fa-linkedin fa-2x topbar_fontsize" style="font-size:24px"></i></a>
+                                <a href="#" class="instagram text-danger ml-4 "><i
+                                    class="fab  fa-youtube  topbar_fontsize mt-5" target="_blank"
+                                    style="font-size:32px ;"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Last Copy right footer -->
+
+                      <div class="row bgFooterColor  justify-content-right" style="min-width:101%;">
+                        <div class="col-md-6 ">
+                          <div class="ml-3"><a href="#"><span class="font-weight-bold">Accessibility</span> </a> <a
+                              href="#"><span class="font-weight-bold">Privacy Policy</span></a> <a href="#"><span
+                                class="font-weight-bold">Term of Use</span></a> <a href="/sitemap"><span
+                                class="font-weight-bold">Sitemap</span></a> <br />
+                            © Indian Institute of Technology (BHU) Varanasi. All Rights Reserved.</div>
+                        </div>
+
+                        <div class="col-md-6 text-right "><a class="pr-3" href="/cf/cis/website/moderators"><span
+                              class="font-weight-bold">Webmaster</span></a><br /><span
+                            class="font-weight-bold">Developed and maintained by CCIS, IIT(BHU)</span></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </section>
+
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="application/json"
+    data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/234","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":1},"user":{"uid":0,"permissionsHash":"5c59041864e9dbd4600df6bb13b8817b9e494f65c5e1bac11e281ab8e9787b04"}}</script>
+  <script src="/core/assets/vendor/jquery/jquery.min.js?v=3.6.3"></script>
+  <script src="/core/misc/polyfills/element.matches.js?v=9.5.10"></script>
+  <script src="/core/misc/polyfills/object.assign.js?v=9.5.10"></script>
+  <script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+  <script src="/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+  <script src="/core/misc/drupalSettingsLoader.js?v=9.5.10"></script>
+  <script src="/core/misc/drupal.js?v=9.5.10"></script>
+  <script src="/core/misc/drupal.init.js?v=9.5.10"></script>
+  <script src="/modules/google_analytics/js/google_analytics.js?v=9.5.10"></script>
+  <script src="/core/misc/jquery.once.bc.js?v=9.5.10"></script>
+  <script src="/themes/bootstrap_barrio/js/barrio.js?v=9.5.10"></script>
+  <script src="/themes/bootstrap_barrio/js/affix.js?v=9.5.10"></script>
+  <script src="/libraries/bootstrap/js/bootstrap.min.js?slym03"></script>
+  <script src="/themes/bootstrap_barrio_iitbhu/js/global.js?v=9.5.10"></script>
+  <script src="/libraries/custom/active.js?slym03"></script>
+  <script src="/libraries/custom/counter_front.js?slym03"></script>
+  <script src="/libraries/custom/colorChanger.js?slym03"></script>
+  <script src="/libraries/custom/scrollTop.js?slym03"></script>
+  <script src="/libraries/custom/colors.js?slym03"></script>
+  <script src="/libraries/custom/jssor.slider-28.0.0.min.js?slym03"></script>
+
+  <div class="footer">
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+     search..........
+    </button>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ask your query</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+              }
+
+              .chaty-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                padding: 20px;
+              }
+
+              .chaty-box {
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+                width: 100%;
+                max-width: 600px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+              }
+
+              .messages {
+                height: 400px;
+                overflow-y: auto;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 10px;
+                margin-bottom: 20px;
+              }
+
+              .message {
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 10px;
+              }
+
+              .user-message {
+                background-color: #e1f5fe;
+                align-self: flex-end;
+              }
+
+              .bot-message {
+                background-color: #f1f1f1;
+                align-self: flex-start;
+              }
+
+              .input-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              }
+
+              .input-container input {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+              }
+
+              .input-container button {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+
+              .input-container button:hover {
+                background-color: #0056b3;
+              }
+            </style>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-container">
+    <button class="expand-button" onclick="toggleChatBox()">+</button>
+    <div id="chat-box" class="chat-box">
+        <div id="messages" class="messages"></div>
+        <div class="input-container">
+            <input type="text" id="query" placeholder="Ask your question..." required>
+            <button onclick="askQuestion()">Send</button>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
